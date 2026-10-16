@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory | BCD-Binary Conversion Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="brand">
+            
+            <div>
+                <h1>BCD-Binary Conversion Tool</h1>
+                <p>Understand every bit.</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html">Converter</a>
+            <a class="active" href="theory.html">Theory</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <span class="eyebrow">LEARN THE CONCEPT</span>
+            <h2>Understanding BCD and Binary</h2>
+            <p>
+                Learn how decimal digits are represented in BCD
+                and how the complete number is converted into ordinary binary.
+            </p>
+        </section>
+
+        <section class="theory-section">
+            <h2>1. Introduction to Number Systems</h2>
+            <p>
+                A number system is a method of representing numbers using
+                specific digits or symbols. Decimal uses ten digits, from
+                0 to 9, while binary uses only two digits: 0 and 1.
+            </p>
+            <p>
+                Computers and digital circuits use binary representation
+                extensively. BCD, or Binary-Coded Decimal, provides another
+                way to represent decimal numbers using groups of binary bits.
+            </p>
+        </section>
+
+        <section class="theory-section">
+            <h2>2. What Is BCD?</h2>
+            <p>
+                BCD stands for Binary-Coded Decimal. In standard 8421 BCD,
+                every decimal digit is represented independently using
+                four bits.
+            </p>
+
+            <p class="formula">
+                Decimal 25 = BCD 0010 0101
+            </p>
+
+            <p>
+                The digit 2 is encoded as 0010, and the digit 5 is encoded
+                as 0101. Joining these groups gives the BCD representation
+                of decimal 25.
+            </p>
+
+            <h3>BCD Conversion Table</h3>
+            <table class="theory-table">
+                <thead>
+                    <tr>
+                        <th>Decimal Digit</th>
+                        <th>BCD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>0000</td></tr>
+                    <tr><td>1</td><td>0001</td></tr>
+                    <tr><td>2</td><td>0010</td></tr>
+                    <tr><td>3</td><td>0011</td></tr>
+                    <tr><td>4</td><td>0100</td></tr>
+                    <tr><td>5</td><td>0101</td></tr>
+                    <tr><td>6</td><td>0110</td></tr>
+                    <tr><td>7</td><td>0111</td></tr>
+                    <tr><td>8</td><td>1000</td></tr>
+                    <tr><td>9</td><td>1001</td></tr>
+                </tbody>
+            </table>
+
+            <p>
+                In standard 8421 BCD, the groups 1010 through 1111 are
+                invalid because each group must represent a single
+                decimal digit from 0 to 9.
+            </p>
+        </section>
+
+        <section class="theory-section">
+            <h2>3. What Is Ordinary Binary?</h2>
+            <p>
+                Ordinary binary represents the entire number using powers
+                of two. Starting from the right, the positions represent
+                2⁰, 2¹, 2², 2³, and so on.
+            </p>
+
+            <p class="formula">
+                25 = 16 + 8 + 1<br>
+                25 in ordinary binary = 11001
+            </p>
+
+            <p>
+                Unlike BCD, ordinary binary does not encode every decimal
+                digit separately. It represents the complete numerical value.
+            </p>
+        </section>
+
+        <section class="theory-section">
+            <h2>4. BCD vs Ordinary Binary</h2>
+            <table class="theory-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>BCD</th>
+                        <th>Ordinary Binary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Decimal 3</td>
+                        <td>0011</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>Decimal 25</td>
+                        <td>0010 0101</td>
+                        <td>11001</td>
+                    </tr>
+                    <tr>
+                        <td>Method</td>
+                        <td>Each decimal digit separately</td>
+                        <td>Entire number represented together</td>
+                    </tr>
+                    <tr>
+                        <td>Bits used</td>
+                        <td>Four bits per decimal digit</td>
+                        <td>Depends on the number's value</td>
+                    </tr>
+                    <tr>
+                        <td>Typical uses</td>
+                        <td>Decimal displays and counters</td>
+                        <td>General digital computation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="theory-section">
+            <h2>5. How the Software Works</h2>
+
+            <h3>BCD Input Mode</h3>
+            <ol>
+                <li>The user enters a BCD bit sequence.</li>
+                <li>The software checks the binary digits and input length.</li>
+                <li>The bits are divided into four-bit groups.</li>
+                <li>Each group is converted into a decimal digit.</li>
+                <li>The digits are combined into a decimal number.</li>
+                <li>The decimal number is converted to ordinary binary.</li>
+                <li>The software displays the result and conversion steps.</li>
+            </ol>
+
+            <h3>Decimal Input Mode</h3>
+            <ol>
+                <li>The user enters a non-negative whole decimal number.</li>
+                <li>Each decimal digit is converted into a four-bit BCD group.</li>
+                <li>The whole number is converted into ordinary binary.</li>
+                <li>The BCD, binary and decimal values are displayed.</li>
+            </ol>
+        </section>
+
+        <section class="theory-section">
+            <h2>6. Worked Example: BCD 0011</h2>
+
+            <p><strong>Step 1:</strong> Read the four-bit BCD group.</p>
+            <p><code>0011</code></p>
+
+            <p><strong>Step 2:</strong> Convert it into a decimal digit.</p>
+            <p>Binary 0011 represents decimal 3.</p>
+
+            <p><strong>Step 3:</strong> Convert decimal 3 into ordinary binary.</p>
+            <p class="formula">
+                3 = 2 + 1<br>
+                Ordinary binary = 11
+            </p>
+
+            <p><strong>Final answer:</strong></p>
+            <ul>
+                <li>Entered BCD: 0011</li>
+                <li>Decimal value: 3</li>
+                <li>Ordinary binary: 11</li>
+            </ul>
+        </section>
+
+        <section class="theory-section">
+            <h2>7. Applications of BCD</h2>
+            <ul>
+                <li>Digital clocks and electronic counters.</li>
+                <li>Calculators and decimal display systems.</li>
+                <li>Digital measuring instruments.</li>
+                <li>Electronic devices that process decimal digits.</li>
+            </ul>
+        </section>
+
+        <section class="theory-section">
+            <h2>8. Conclusion</h2>
+            <p>
+                BCD and ordinary binary both use 0s and 1s, but their
+                representation methods differ. BCD encodes individual
+                decimal digits, while ordinary binary represents the
+                complete number using powers of two.
+            </p>
+            <p>
+                This project demonstrates both representations and makes
+                the conversion easier to understand through validation,
+                highlighted results and step-by-step explanations.
+            </p>
+
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>BCD to Binary Conversion Software </p>
+    </footer>
+</body>
+</html>
