@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCD to Binary Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="brand">
+            
+            <div>
+                <h1>BCD-Binary Conversion Tool</h1>
+                <p>Understand every bit.</p>
+            </div>
+        </div>
+
+        <nav>
+            <a class="active" href="index.html">Converter</a>
+            <a href="theory.html">Theory</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <span class="eyebrow">NUMBER SYSTEM TOOL</span>
+            <h2>BCD to Binary Conversion</h2>
+            <p>
+                Convert BCD into ordinary binary and understand
+                the decimal value behind every result.
+            </p>
+        </section>
+
+        <section class="converter-card">
+            <h2>Enter Your Number</h2>
+            <p class="section-description">
+                Choose your input type and enter a value to begin.
+            </p>
+
+            <label for="inputMode">Input type</label>
+            <select id="inputMode">
+                <option value="bcd">BCD Bits</option>
+                <option value="decimal">Decimal Number</option>
+            </select>
+
+            <label id="inputLabel" for="numberInput">Enter BCD Bits</label>
+            <input
+                id="numberInput"
+                type="text"
+                placeholder="Example: 0011  (for decimal 3)"
+                autocomplete="off"
+                spellcheck="false"
+            >
+
+            <p class="input-hint" id="inputHint">
+                Use 4 bits for each decimal digit. Spaces are optional.
+            </p>
+
+            <div class="button-group">
+                <button type="button" id="convertBtn" class="primary-button">
+                    Convert Number
+                </button>
+                <button type="button" id="clearBtn" class="secondary-button">
+                    Clear
+                </button>
+            </div>
+
+            <p id="errorMessage" class="error-message"
+               role="alert" aria-live="polite"></p>
+        </section>
+
+        <section id="resultSection" class="results-card" hidden>
+            <div class="result-heading">
+                <div>
+                    <span class="eyebrow">YOUR ANSWER</span>
+                    <h2>Conversion Result</h2>
+                </div>
+                <span class="success-label">Conversion complete</span>
+            </div>
+
+            <!-- Highlighted input and binary output -->
+            <div class="conversion-flow">
+                <div class="value-card bcd-highlight">
+                    <span class="value-label" id="inputCardLabel">
+                        ENTERED BCD
+                    </span>
+                    <span class="value-number" id="inputBCDResult">0011</span>
+                </div>
+
+                <div class="arrow-block" aria-hidden="true">
+                    <span>→</span>
+                    <small>Convert</small>
+                </div>
+
+                <div class="value-card binary-highlight">
+                    <span class="value-label">BINARY RESULT</span>
+                    <span class="value-number" id="binaryResult">11</span>
+                </div>
+            </div>
+
+            <!-- Decimal output with icon, below the highlighted boxes -->
+            <div class="decimal-output">
+                <div class="decimal-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" role="img">
+                        <rect x="6" y="4" width="36" height="40" rx="8"
+                              fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <rect x="12" y="10" width="24" height="8" rx="2"
+                              fill="currentColor" opacity="0.16"/>
+                        <circle cx="15" cy="25" r="2" fill="currentColor"/>
+                        <circle cx="24" cy="25" r="2" fill="currentColor"/>
+                        <circle cx="33" cy="25" r="2" fill="currentColor"/>
+                        <circle cx="15" cy="34" r="2" fill="currentColor"/>
+                        <circle cx="24" cy="34" r="2" fill="currentColor"/>
+                        <circle cx="33" cy="34" r="2" fill="currentColor"/>
+                    </svg>
+                </div>
+
+                <div class="decimal-copy">
+                    <span>DECIMAL VALUE OF OUTPUT</span>
+                    <strong id="decimalResult">3</strong>
+                    <small id="decimalExplanation">11₂ = 3₁₀</small>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <span class="detail-label">BCD Representation</span>
+                <code id="bcdResult">0011</code>
+            </div>
+
+            <div class="steps-container">
+                <h3>Step-by-Step Explanation</h3>
+                <ol id="stepsList"></ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>BCD to Binary Conversion Software </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
